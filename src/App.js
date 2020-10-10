@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
 import { robots } from "./robots";
+import "./app.css";
 
 class App extends Component {
   constructor() {
@@ -13,7 +14,7 @@ class App extends Component {
   }
 
   onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value });
+    this.setState({ searchfield: event.target.value }); // Object Destructuring
   };
 
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
     });
     return (
       <div className="tc">
-        <h1>RoboKu</h1>
+        <h1 className="f1">RoboKu</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <CardList robots={filteredRobots} />
       </div>
